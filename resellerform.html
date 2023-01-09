@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseller form</title>
+    <style>
+        body{background-color: #FEE7D8;}
+        h1{font-family: 'Times New Roman', Times, serif;font-weight: 500;color: #262a30;text-align: center;}
+        h2{font-family: 'Times New Roman', Times, serif;color: #262a30;font-weight: 400;text-align: center;position: relative;top: 4vh;left: 25vw;padding: 10px;max-width: 50vw;}
+        img{position: relative;top: 20vh;left: 20vw;box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;}
+        form{background-color: #FEE7D8;max-width: 41vw;height: max-content;position: relative;left: 45vw;bottom: 218px;border-radius: 2%;padding: 15px;box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;}
+        .labels{padding-right: 150px;font-family: Georgia, serif;font-size: 17px;font-weight: 300;}
+        .fields{padding: 10px;background-color: #c7c8ca;border: none;border-radius: 3%;}
+        #valid{font-family: Georgia, serif;font-size: 14px;color: gray;}
+        #sbmt{padding: 14px 10px;border: none;border-radius: 3%;background-color: rgb(228, 193, 142);width: 100%;cursor: pointer;}
+        #sbmt:hover{background-color: rgb(226, 183, 117);}
+    </style>
+</head>
+<body>
+    <h1>Want to be our reseller?</h1>
+    <h2>Fill out our reseller form to let us know.</h2>
+    <img src="hwgl.png">
+    <form action=#>
+        <label for="name" class="labels">Full Name*</label><br>
+        <input type="text" id="name" required size="60" placeholder="Juan Tomas jr. II" class="fields"><br>
+        <br><label for="email" class="labels">Email Address</label>
+        <label for="contact" class="labels">Contact Number*</label><br>
+        <input type="email" id="email" placeholder="juantomas@abc.com" size="30" class="fields">
+        <input type="text" id="contact" pattern="09[0-9]{9}" placeholder="09XXXXXXXXX" class="fields" required><br>
+        <br><label for="area" class="labels">Target Area of Merchandising:*</label><br>
+        <select name="Areas" id="area" class="fields" required>
+            <option>NCR</option>
+            <option>Region I</option>
+            <option>Region II</option>
+            <option>Region III</option>
+            <option>Region IV</option>
+            <option>Region V</option>
+        </select><br>
+        <br><label for="ID" class="labels">Proof of Identification*</label><br>
+        <input type="file" accept="image/*" id="ID" class="fields" required><br>
+        <br><label id="valid">List of VALID IDs: TIN ID, PhilHealth ID, UMID, NBI Clearance, Voter's ID, Postal ID, Driver's License, and Passport.</label><br>
+        <br><input type="submit" id="sbmt">
+    </form>
+</body>
+</html>
