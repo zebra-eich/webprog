@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQS</title>
+    <style>
+    body{background-color: #FEE7D8;max-width: 100%;overflow-x:hidden;}
+    h1{position: relative;left: 36vw;font-family:'Garamond';font-weight: lighter;color: #262a30;}
+    h3,h2{font-family:'Garamond';color: #262a30}
+    p{font-family:'Times New Roman', Times, serif;color: #262a30}
+    .accordion {background-color: rgb(214, 209, 182);color: #262a30;cursor: pointer;padding: 7px;width: 63vw;padding-left: 30px;text-align: left;border: none;outline: none;transition: 0.7s;position: relative;left: 18vw;top: 5vh}
+    .accordion:after {content: '\02795';font-size: 13px;color: #262a30;float: right;margin-left: 5px;}    
+    .active, .accordion:hover {background-color: #fdcaa7;}
+    .active:after{content: "\2796";}
+    .faq{width: 60vw;padding-top: 1px;padding-left: 30px;transition: max-height 0.3s ease-out;max-height: 0;overflow: hidden;
+    ;position: relative;left: 18vw;top: 5vh;}
+    .faq1{width: 60vw;position: relative;left: 18vw;top: 5vh;border-top-width: 1px;border-top-style: solid;border-top-color: #b48466;padding-top: 1px;padding-left: 30px;border-bottom-style: solid;border-bottom-color: #b48466;border-bottom-width: 1px;}
+    .dvde{position: relative;left: 18vw;top: 5vh;padding-top: 1px;}
+    #buttons{position: relative;position: relative;left: 45vw; top: 60px;}
+    a{text-decoration: none;display: inline-block;padding: 8px 16px;border-radius: 40%;color: #262a30;}
+    a:hover{background-color: rgb(66, 64, 64); color: rgb(255, 255, 255);}
+    .previous{background-color: #c4b3a7; color: black;}
+    .next{background-color: #7c6451;color: white;}
+    .activebtn, .btn:hover{background-color: rgb(141, 138, 138);color: white;}
+    ::-webkit-scrollbar {width: 10px;}
+    ::-webkit-scrollbar-track {box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;}
+    ::-webkit-scrollbar-thumb {background: #FEE7D8;border-radius: 2px;}
+    </style>
+</head>
+<body>
+    <h1>Frequently Asked Questions</h1>
+    <div class="faq1">
+        <h3>What is HWGL?</h3>
+        <p>Praesent urna ligula, semper quis augue eu, congue tincidunt sem. Cras sit amet ante aliquam, facilisis diam sit amet, lobortis lorem. In hac habitasse platea dictumst. Nam non pulvinar ipsum. Find out more at *About us link*.sadsadda</p>
+    </div>
+    <div class="dvde">
+        <h2>Orders</h2>
+    </div>
+    <button class="accordion"><h3>How do I order?</h3></button>
+    <div class="faq">
+        <p>Praesent urna ligula, semper quis augue eu, congue tincidunt sem. Cras sit amet ante aliquam, facilisis diam sit amet, lobortis lorem.</p>
+    </div>
+    <button class="accordion"><h3>Can I cancel an order?</h3></button>
+    <div class="faq">
+        <p>Praesent urna ligula, semper quis augue eu, congue tincidunt sem. Cras sit amet ante aliquam, facilisis diam sit amet, lobortis lorem.</p>
+    </div>
+    <div class="dvde">
+        <h2>Payment</h2>
+    </div>
+    <button class="accordion"><h3>How can I pay for an order?</h3></button>
+    <div class="faq">
+        <p>Praesent urna ligula, semper quis augue eu, congue tincidunt sem. Cras sit amet ante aliquam, facilisis diam sit amet, lobortis lorem.</p>
+    </div>
+    <button class="accordion"><h3>Can I not pay?</h3></button>
+    <div class="faq">
+        <p>Praesent urna ligula, semper quis augue eu, congue tincidunt sem. Cras sit amet ante aliquam, facilisis diam sit amet, lobortis lorem.</p>
+    </div>
+    <div id="buttons">
+    <a href="#" class="previous round">&#8249;</a>
+    <a href="#" class="btn activebtn">1</a>
+    <a href="#" class="btn">2</a>
+    <a href="#" class="next round">&#8250;</a>
+    </div>
+    <script>
+        var btnContainer = document.getElementById("buttons");
+        var btns = btnContainer.getElementsByClassName("btn");
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+            var current = document.getElementsByClassName("activebtn");
+            current[0].className = current[0].className.replace(" activebtn", "");
+            this.className += " activebtn";
+                });
+            }
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
